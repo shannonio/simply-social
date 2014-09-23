@@ -1,0 +1,39 @@
+// -----------------------------------------------------------------------------
+// Buttons
+// -----------------------------------------------------------------------------  
+
+
+// -----------------------------------------------------------------------------
+// Inputs
+// -----------------------------------------------------------------------------  
+
+.input {
+  -webkit-appearance: none;
+  background: transparent;
+  .radius(3px);
+  border: 1px solid fadeout(@silver, 72%);
+  color: fadeout(@silver, 50%);
+  display: inline-block;
+  .emCalc(10px);
+  font-weight: 200;
+  letter-spacing: 2px;
+  line-height: 2;
+  outline: none;
+  text-align: left;
+
+  &:-ms-input-placeholder {
+    color: @white;
+  }
+
+  &::-webkit-input-placeholder {
+    color: @white;
+  }
+
+  &:-moz-placeholder {
+    color: @white; // supported by old mozilla implementations
+  }
+
+  &::-moz-placeholder {
+    color: @white;
+  }
+}
