@@ -1,4 +1,4 @@
-angular.module('simplySocial').controller('HeroCtrl',function($scope){
+angular.module('simplySocial').controller('HeroCtrl',function($scope) {
 
 
 });

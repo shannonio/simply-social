@@ -1,14 +1,93 @@
 .partial--hero {
   height: 360px;  
+
   .vcenter {
     display: table;
+    top: 40px;
+    position: relative;
     width: 100%;
     height: 100%;
     background:  url("/images/hero-bg.png") no-repeat 0 0;
+    background-size: 100%;
+
 
     > .vobject {
       display: table-cell;
       vertical-align: middle;
     }
+  }
+}
+
+.partial--hero__create-new {
+  .radius(3px);
+  background-color: fadeout(@aqua, 30%);
+  width: 425px;
+  margin: 0 auto;
+  padding: 30px 15px;
+
+  .input {
+    background: transparent;
+    color: fadeout(@white, 30%);
+    border: 0;
+    width: 100%;
+    height: 50%;
+    font-size: 22px;
+  }
+
+  .button {
+    .single-transition();
+    color: fadeout(@white, 30%);
+    background: transparent;
+    border: 0;
+    font-size: 11px;
+
+    &:hover {
+      color: @white;
+    }
+  }
+}
+
+.partial--hero__toggles {
+  top: 98px;
+  position: relative;
+  overflow: hidden;
+  font-family: @tertiary-font;
+  color: fadeout(@white, 30%);
+
+  ul {
+    list-style: none;
+  }
+
+  li {
+    .pull-left;
+    padding-bottom: 12px;
+    margin-right: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 9px;
+
+    &:hover {
+      color: @white;
+      cursor: pointer;
+    }
+  }
+
+  .partial--hero__post-toggle {
+    .pull-left;
+    margin: 0 -37px;
+    
+    li {
+      padding: 0 6px 12px 6px;
+
+      &.active {
+        border-bottom: 3px solid @aqua;
+        color: @white;
+      } 
+    }
+  }
+
+  .partial--hero__view-toggle {
+    .pull-right;
+    margin: 0 -14px;
   }
 }

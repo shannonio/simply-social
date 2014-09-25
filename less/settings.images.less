@@ -8,3 +8,40 @@
   background: url(@sprite-url) no-repeat 0 0;
   background-size: 267px auto;
 }
+
+.icon {
+	.sprite;
+	display: inline-block;
+
+	&.photo {
+		background-position: -22px -45px;
+		width: 18px;
+		height: 10px;
+	}
+
+	&.video {
+		background-position: -55px -45px;
+		width: 18px;
+		height: 10px;
+	}
+
+	&.list {
+		background-position: -168px -18px;
+		width: 11px;
+		height: 10px;
+
+		&.active, &:hover {
+			background-position: -157px -18px;
+		}
+	}	
+
+	&.grid {
+		background-position: -198px -18px;
+		width: 11px;
+		height: 10px;
+
+		&.active, &:hover {
+			background-position: -187px -18px;
+		}
+	}
+}

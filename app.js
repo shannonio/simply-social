@@ -6,6 +6,10 @@ angular.module('simplySocial').config(function($stateProvider, $urlRouterProvide
         url: '/home',
         templateUrl: 'partial/home/home.html'
     });
+    $stateProvider.state('all-posts', {
+        url: '/all-posts',
+        templateUrl: 'partial/all-posts/all-posts.html'
+    });
     /* Add New States Above */
     $urlRouterProvider.otherwise('/home');
 

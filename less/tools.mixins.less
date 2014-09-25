@@ -17,6 +17,21 @@
   font-size: (@value / @context) + 0em;
 }
 
+// -----------------------------------------------------------------------------
+// a little mixin to have an even fadeout 
+// -----------------------------------------------------------------------------
+
+.our-fadeout(@color: @white, @percent: 30%) {
+	color: fadeout(@color, @percent);
+	background-color: fadeout(@color, @percent);
+
+}
+.our-fadeout-hover(@color) {
+	&:hover {
+		color: @color;
+		background-color: @color;
+	}
+}
 // // -----------------------------------------------------------------------------
 // // we can control whether or not we have inset shadows edges.
 // // $active - Default: true, Options: false
@@ -28,17 +43,17 @@
 //     box-shadow: $box-shadow-size $box-shadow-shiny-color-active inset; } }
 // }
 
-// // -----------------------------------------------------------------------------
-// // We use this to add transitions to elements
-// // $property - Default: all,
-// // Options: http://www.w3.org/TR/css3-transitions/#animatable-properties
-// // $speed - Default: 218ms
-// // $ease - Default:ease-out,
-// // Options: http://css-tricks.com/almanac/properties/t/transition-timing-function/
-// // -----------------------------------------------------------------------------
-// @mixin single-transition($property: all, $speed: .218s, $ease: ease-out) {
-//   transition: $property $speed $ease;
-// }
+// -----------------------------------------------------------------------------
+// We use this to add transitions to elements
+// $property - Default: all,
+// Options: http://www.w3.org/TR/css3-transitions/#animatable-properties
+// $speed - Default: 218ms
+// $ease - Default:ease-out,
+// Options: http://css-tricks.com/almanac/properties/t/transition-timing-function/
+// -----------------------------------------------------------------------------
+.single-transition(@property: all, @speed: .218s, @ease: ease-out) {
+  transition: @property @speed @ease;
+}
 
 // // -----------------------------------------------------------------------------
 // // we use this to create isosceles triangles
