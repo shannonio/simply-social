@@ -1,4 +1,4 @@
-describe('HeroCtrl', function() {
+describe('NewPostCtrl', function() {
 
   beforeEach(module('simplySocial'));
 
@@ -6,10 +6,10 @@ describe('HeroCtrl', function() {
 
     beforeEach(inject(function($rootScope, $controller) {
       scope = $rootScope.$new();
-      ctrl = $controller('HeroCtrl', {$scope: scope});
+      ctrl = $controller('NewPostCtrl', {$scope: scope});
     }));  
 
-  it('should be a hero!', inject(function() {
+  it('should ...', inject(function() {
 
     expect(1).toEqual(1);
     

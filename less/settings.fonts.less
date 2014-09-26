@@ -34,6 +34,7 @@
   @font-size-slightly-larger:     1.0625em;
   @font-size-slightly-smaller:    .875em;
   @font-size-small:               .75em;
+  @font-size-really-small:        .45em;
   @font-size-large:               1.4375em;
 
   @font-smoothing:                antialiased;
@@ -51,3 +52,22 @@
   @font-weight-semi-bold:         600;
   @font-weight-bold:              700;
 
+// -----------------------------------------------------------------------------
+// font-styles
+// -----------------------------------------------------------------------------
+
+.quiet {
+  color: @silver;
+}
+
+h1 {
+  font-family: @secondary-font;
+  font-size: @font-size-large;
+}
+
+h5 {
+  font-family: @primary-font;
+  font-size: @font-size-really-small; 
+  text-transform: uppercase;
+  color: @grey;
+}

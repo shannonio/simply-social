@@ -21,6 +21,7 @@
   <script src="bower_components/angular-resource/angular-resource.js"></script>
   <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
   <script src="bower_components/angular-ui-utils/ui-utils.js"></script>
+  <script src="bower_components/angular-placeholder-tai/lib/tai-placeholder.js"></script>
   <!-- Add New Bower Component JS Above -->
 
 
@@ -30,13 +31,19 @@
   <script src="partial/navbar/navbar.js"></script>
   <script src="partial/hero/hero.js"></script>
   <script src="partial/all-posts/all-posts.js"></script>
+  <script src="directive/post/post.js"></script>
+  <script src="service/post-factory.js"></script>
+  <script src="filter/highlight.js"></script>
+  <script src="service/modal-factory.js"></script>
+  <script src="partial/new-post/new-post.js"></script>
+  <script src="partial/settings/settings.js"></script>
   <!-- Add New Component JS Above -->
 
   <div>
     <div id="content">
       <div class="row">
-        <ng-include src="'partial/navbar/navbar.html'" ></ng-include>
-        <div ui-view>
+        <ng-include src="'partial/navbar/navbar.html'"></ng-include>
+        <div ui-view="main">
         </div>
       </div>
     </div>

@@ -1,0 +1,96 @@
+// -----------------------------------------------------------------------------
+// Sprite Mixin
+// -----------------------------------------------------------------------------  
+
+@sprite-url: "images/sprite.png";
+
+.sprite {
+  background: url(@sprite-url) no-repeat 0 0;
+  background-size: 267px auto;
+}
+
+.icon {
+  .sprite;
+  display: inline-block;
+
+  &.photo {
+    background-position: -22px -45px;
+    width: 18px;
+    height: 10px;
+
+    &.dark {
+      background-position: -201px -44px;
+      height: 11px;
+    }
+  }
+
+  &.video {
+    background-position: -55px -45px;
+    width: 18px;
+    height: 10px;
+
+    &.dark {
+      background-position: -176px -44px;
+      height: 11px;
+    }
+  } 
+
+  &.favorite {
+    background-position: -118px -45px;
+    width: 18px;
+    height: 10px;
+
+    &.active, &:hover {
+      cursor: pointer;
+    }
+  } 
+
+  &.reply {
+    background-position: -93px -46px;
+    width: 18px;
+    height: 9px;
+
+    &.active, &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &.list {
+    background-position: -168px -18px;
+    width: 11px;
+    height: 10px;
+
+    &.active, &:hover {
+      background-position: -157px -18px;
+    }
+  } 
+
+  &.tile {
+    background-position: -198px -18px;
+    width: 11px;
+    height: 10px;
+
+    &.active, &:hover {
+      background-position: -187px -18px;
+    }
+  }  
+
+  &.caret {
+    background-position: -138px -48px;
+    width: 11px;
+    height: 6px;
+
+    &.up {
+    background-position: -138px -42px;
+    }
+
+    &.active, &:hover {
+    }
+  }
+
+  &.close {
+    background-position: -211px -15px;
+    width: 21px;
+    height: 21px;
+  }
+}

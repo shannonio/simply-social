@@ -1,12 +1,29 @@
 <div class="partial--navbar" ng-controller="NavbarCtrl">
 
   <div class="pull-left">
-    <span class="ss-logo"></span>
+    <a ui-sref="home.all-posts"><span class="ss-logo"></span></a>
   </div>  
 
   <div class="pull-right">
-    <span class="icon--create_message"></span>
+    <span class="icon--create_message" ng-click="open()"></span>
     <input class="input light">
+
+    <div class="pull-right partial--navbar__my-info" ng-mouseover="showMenu = true" ng-mouseout="showMenu = false">
+      <img src="http://placehold.it/25x25" />
+      <span class="icon caret"></span>
+
+      <div class="partial--navbar__my-info-list" ng-show="showMenu">
+        <div class="arrow-up"></div>
+        <ul>
+          <li>Profile</li>
+          <li>Following</li>
+          <li>Followers</li>
+          <li><a ui-sref="settings">Settings</a></li>
+        </ul>
+      </div>
+    </div>
+
+
   </div>
 
 </div>

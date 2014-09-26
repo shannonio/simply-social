@@ -1,0 +1,23 @@
+.partial--all_posts.tile {
+  .column-layout(3, 10px);
+  width: @tile-width;
+
+  @media only screen and (max-width : 974px),
+  only screen and (max-device-width : 974px){
+    .column-layout(2, 10px);
+    width: calc(@tile-width - 200px);
+  }   
+
+  @media only screen and (max-width : 774px),
+  only screen and (max-device-width : 774px){
+    .column-layout(2, 10px);
+    width: calc(@tile-width - 400px);
+  }   
+
+  @media only screen and (max-width : 574px),
+  only screen and (max-device-width : 574px){
+    .column-layout(1, 10px);
+    width: 100%;
+  }
+
+}

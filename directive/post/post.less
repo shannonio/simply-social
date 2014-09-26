@@ -1,0 +1,101 @@
+.directive--post {
+  .radius(3px);
+  border: 1px solid @silver;
+  overflow: hidden;
+  margin: 5px;
+
+  .content {
+    padding: 20px;
+  }
+}
+
+.directive--post.tile {
+  display: inline-block;
+  margin-bottom: 0px;
+  width: 98%;
+
+  //ie
+  width: 250px \9;
+  float: left \9;
+}
+
+.directive--post__avatar, .directive--post__avatar img{
+  .radius(3px);
+  float: left;
+}
+
+.directive--post__title {
+  padding: 0 10px;
+  font-size: 12px;
+  color: @dim;
+  overflow: auto;
+
+  span, div {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.directive--post__time-ago {
+  font-size: 12px;
+  line-height: 10px;
+  vertical-align: bottom;
+}
+
+.directive--post__menu {
+  float: right;
+
+  &.bottom {
+    display: none;
+  }
+}
+
+.directive--post.tile .directive--post__menu {
+  &.top {
+    display: none;
+  }
+  &.bottom {
+    display: block;
+
+    .directive--post__time-ago {
+      vertical-align: middle;
+    }
+  }
+}
+
+.directive--post__body {
+  display: flex;
+  font-size: 11px;
+  color: @dimmer;
+  padding: 10px;
+
+  //ie
+  display: block \9;
+  margin-left: 31px \9;
+}
+
+.directive--post__image img {
+  .radius(0 0 3px 3px);
+  width: 100%;
+  margin-bottom: -5px;
+}
+
+.directive--post__comments-control {
+  font-size: 10px;
+  color: @silver;
+  cursor: pointer;
+
+  .icon {
+    vertical-align: baseline;
+  }
+
+  &:hover {
+    color: @grey;
+  }
+}
+
+.directive--post__comment {
+  background-color: @offwhite;
+  border-top: 1px solid fadeout(@silver, 60%);
+
+}

@@ -1,0 +1,45 @@
+.partial--new_post {
+  color: @grey;
+  font-size: 13px;
+
+  ul {
+    list-style: none;
+  }
+
+  p {
+    text-align: left;
+  }
+
+  .partial--new_post__media {
+    display: inline-block;
+    float: left;
+  }
+
+  .input {
+    background: @white;
+    color: @grey;
+    width: 100%;
+    border: 1px solid darken(@silver, 2%);
+    resize: none;
+    margin: 10px 0;
+  }
+
+  .button {
+    display: inline-block;
+  }
+
+  .button.media {
+    color: fadeout(@grey, 55%);
+    opacity: .6;
+
+    &:hover {
+      color: fadeout(@grey, 55%);
+      opacity: 1;
+    }
+
+  }
+
+  .button.cta {
+    float: right;
+  }
+}

@@ -1,5 +1,7 @@
-<div class="col-md-12" ng-controller="HomeCtrl">
+<section class="partial--home" ng-controller="HomeCtrl">
 
-	<ng-include src="'partial/hero/hero.html'" ></ng-include>
+  <ng-include src="'partial/hero/hero.html'" ></ng-include>
 
-</div>
+  <div ui-view="home" class="partial--home__view container" ng-class="{'tile': listType === 'tile'}"></div>
+
+</section>

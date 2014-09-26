@@ -1,7 +1,49 @@
 // -----------------------------------------------------------------------------
 // Buttons
-// -----------------------------------------------------------------------------  
+// -----------------------------------------------------------------------------
+.button.cta {
+  .single-transition();
+  .radius(3px);
+  background: fadeout(@teal, 10%);
+  color: @white;
+  border: 0;
+  padding: 7px 17px;
+  font-size: 11px;
 
+  &:hover {
+    background: @teal;
+  }
+}  
+
+.button.media {
+  .single-transition();
+  color: fadeout(@white, 30%);
+  background: transparent;
+  border: 0;
+  font-size: 11px;
+
+  &:hover {
+    color: @white;
+    background: transparent;
+  }
+}
+
+.button.tertiary {
+  .single-transition();
+  .radius(3px);
+  background: transparent;
+  color: @silver;
+  border: 1px solid @silver;
+  padding: 5px 13px;
+  font-size: 9px;
+  display: inherit;
+  margin: 0 auto;
+
+  &:hover {
+    background: @silver;
+    color: @white;
+  }
+}
 
 // -----------------------------------------------------------------------------
 // Inputs
@@ -12,7 +54,7 @@
   background: transparent;
   .radius(3px);
   border: 1px solid fadeout(@silver, 72%);
-  color: fadeout(@silver, 50%);
+  color: @grey;
   display: inline-block;
   .emCalc(10px);
   font-weight: 200;
@@ -37,4 +79,110 @@
   &::-moz-placeholder {
     color: @white;
   }
+}
+
+// -----------------------------------------------------------------------------
+// Checkboxes and radios
+// -----------------------------------------------------------------------------
+
+label {
+  font-weight: 400;
+}
+
+.control {
+  position: relative;
+  display: block;
+  color: @grey;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 6px @pad-half @pad @pad*2.5;
+}
+.control input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1; // Put the input behind the label so it doesn't overlay text
+}
+.control-indicator {
+  position: absolute;
+  top: @space-quarter;
+  left: 0;
+  display: block;
+  width:  16px;
+  height: 16px;
+  font-size: 12px;
+  color: @silver;
+  border: 1px solid @silver;
+  text-align: center;
+  background-color: @silver;
+  background-size: 50% 50%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  user-select: none;
+}
+
+// -----------------------------------------------------------------------------
+// Hover state
+// -----------------------------------------------------------------------------
+.control:hover .control-indicator {
+  color: @white;
+  background-color: #ccc;
+}
+
+// -----------------------------------------------------------------------------
+// Focus
+// -----------------------------------------------------------------------------
+.control input:focus ~ .control-indicator {
+  box-shadow: 0 0 0 .075rem @white, 0 0 0 .1rem @silver;
+}
+
+// -----------------------------------------------------------------------------
+// Checked state
+// -----------------------------------------------------------------------------
+.control input:checked ~ .control-indicator {
+  color: @white;
+  background-color: @teal;
+  border: 2px solid @silver;
+}
+
+// -----------------------------------------------------------------------------
+// Active
+// -----------------------------------------------------------------------------
+.control input:active ~ .control-indicator {
+  color: @white;
+  background-color: @teal;
+}
+
+// -----------------------------------------------------------------------------
+// Checkbox modifiers
+// -----------------------------------------------------------------------------
+.checkbox .control-indicator {
+  border-radius: @pad-quarter;
+}
+
+.checkbox input:checked ~ .control-indicator {
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgOCA4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA4IDgiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTYuNCwxTDUuNywxLjdMMi45LDQuNUwyLjEsMy43TDEuNCwzTDAsNC40bDAuNywwLjdsMS41LDEuNWwwLjcsMC43bDAuNy0wLjdsMy41LTMuNWwwLjctMC43TDYuNCwxTDYuNCwxeiINCgkvPg0KPC9zdmc+DQo=);
+}
+
+// Radio modifiers
+.radio .control-indicator {
+  border-radius: 50%;
+}
+// .radio input:checked ~ .control-indicator {
+  // background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgOCA4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA4IDgiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTQsMUMyLjMsMSwxLDIuMywxLDRzMS4zLDMsMywzczMtMS4zLDMtM1M1LjcsMSw0LDF6Ii8+DQo8L3N2Zz4NCg==);
+// }
+
+// Alternately, use another character
+.control-x input:checked ~ .control-indicator {
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iOHB4IiBoZWlnaHQ9IjhweCIgdmlld0JveD0iMCAwIDggOCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgOCA4IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0xLjQsMEwwLDEuNGwwLjcsMC43bDEuOCwxLjhMMC43LDUuN0wwLDYuNGwxLjQsMS40bDAuNy0wLjdsMS44LTEuOGwxLjgsMS44bDAuNywwLjdsMS40LTEuNEw3LjEsNS43DQoJTDUuMywzLjlsMS44LTEuOGwwLjctMC43TDYuNCwwTDUuNywwLjdMMy45LDIuNUwyLjEsMC43QzIuMSwwLjcsMS40LDAsMS40LDB6Ii8+DQo8L3N2Zz4NCg==);
+}
+.control-dash input:checked ~ .control-indicator {
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iOHB4IiBoZWlnaHQ9IjhweCIgdmlld0JveD0iMCAwIDggOCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgOCA4IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0wLDN2Mmg4VjNIMHoiLz4NCjwvc3ZnPg0K)
+}
+
+// -----------------------------------------------------------------------------
+// Placeholder Class for ie9
+// ----------------------------------------------------------------------------- 
+
+.placeholder {
+    color: #aaa;
 }

@@ -1,0 +1,79 @@
+<article class="directive--post" ng-class="{'tile': listType === 'tile'}">
+
+  <div class="content">
+
+    <div class="directive--post__avatar">
+
+      <img src="http://placehold.it/30x30" />
+
+    </div>
+
+    <div class="directive--post__title">
+
+      <span>{{post.posted_by.full_name}}</span>
+
+      <div class="directive--post__menu top">
+        <span class="icon reply"></span>
+        <span class="icon favorite"></span>
+        <span class="directive--post__time-ago quiet">{{post.created_at}}</span>
+      </div>
+
+    </div>
+
+    <div class="directive--post__body">
+      <span ng-bind-html="post.post_body.text | highlight"></span> &nbsp;
+      <a ng-repeat="url in post.post_body.urls" ng-href="{{url}}" target="_blank">{{url}}</a>
+    </div>  
+
+    <div class="directive--post__comments-control" ng-show="post.comments" ng-click="post.showComments = !post.showComments; changeCommentControl()">
+      {{commentControlText}} <span class="icon caret" ng-class="{'up': post.showComments}"></span>
+    </div>
+
+    <div class="directive--post__menu bottom">
+      <span class="icon reply"></span>
+      <span class="icon favorite"></span>
+      <span class="directive--post__time-ago quiet">{{post.created_at}}</span>
+    </div>
+
+  </div>
+
+  <div ng-show="post.post_body.image_url" class="directive--post__image">
+
+    <img ng-src="{{post.post_body.image_url}}" />
+
+  </div>
+
+  <div class="directive--post__comments" ng-show="post.showComments" ng-class="{'showing': post.showComments}">
+
+
+    <div class="directive--post__comment" ng-repeat="comment in post.comments">
+      <div class="content">
+
+        <div class="directive--post__avatar">
+
+          <img src="http://placehold.it/30x30" />
+
+        </div>
+
+        <div class="directive--post__title">
+
+          <span>{{comment.posted_by.full_name}}</span>
+
+          <div class="directive--post__menu">
+            <span class="icon reply"></span>
+            <span class="icon favorite"></span>
+            <span class="directive--post__time-ago quiet">{{comment.created_at}}</span>
+          </div>
+
+        </div>
+
+        <div class="directive--post__body">
+          <span ng-bind-html="comment.comment_body.text | highlight"></span> &nbsp;
+          <a ng-repeat="url in comment.comment_body.urls" ng-href="{{url}}" target="_blank">{{url}}</a>
+        </div>  
+
+      </div>
+    </div>
+  </div>
+
+</article>

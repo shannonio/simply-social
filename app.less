@@ -5,16 +5,17 @@
 @import "less/tools.clearfix.less";
 @import "less/tools.functions.less";
 @import "less/tools.mixins.less";
-@import "less/tools.z-maps.less";
 @import "less/settings.colors.less";
 @import "less/settings.config.less";
 @import "less/settings.defaults.less";
 @import "less/settings.fonts.less";
-@import "less/settings.shadows.less";
-@import "less/settings.images.less";
 @import "less/layouts.grid.less";
 @import "less/layouts.helpers.less";
+@import "less/objects.images.less";
 @import "less/objects.forms.less";
+@import "less/objects.links.less";
+@import "less/objects.modals.less";
+@import "less/objects.toggles.less";
 /* Base LESS Above */
 
 /* Component LESS */
@@ -22,6 +23,9 @@
 @import "partial/navbar/navbar.less";
 @import "partial/hero/hero.less";
 @import "partial/all-posts/all-posts.less";
+@import "directive/post/post.less";
+@import "partial/new-post/new-post.less";
+@import "partial/settings/settings.less";
 /* Add Component LESS Above */
 
 /* Required for Angular UI Bootstrap */
@@ -29,4 +33,6 @@
 
 html {
   font-family: @primary-font;
+  font-color: @base;
 }
+

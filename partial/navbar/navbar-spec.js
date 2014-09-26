@@ -9,9 +9,11 @@ describe('NavbarCtrl', function() {
       ctrl = $controller('NavbarCtrl', {$scope: scope});
     }));	
 
-	it('should ...', inject(function() {
-
-		expect(1).toEqual(1);
+	it('should have a modal open function', inject(function() {
+    scope.initModal();
+    setTimeout(function() {
+		  expect(scope.open).toBeDefined();
+    }, 500);
 		
 	}));
 

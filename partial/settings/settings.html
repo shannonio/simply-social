@@ -1,0 +1,57 @@
+<section class="partial--settings" ng-controller="SettingsCtrl">
+
+  <div class="container">
+
+    <h1>Settings</h1>
+
+    <div class="partial--settings__account">
+    <h5>Account</h5>
+      
+      <div>
+        <div class="image">
+          <img src="http://placehold.it/65x65" />
+          <button class="button tertiary">change</button>
+        </div>
+        
+        <div class="inputs">
+          <input ng-model="user.name" class="input" type="text" placeholder="your name" />
+          <input ng-model="user.email" class="input" type="email" placeholder="your email" />
+          <input ng-model="user.password" class="input" type="password" placeholder="password" />
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="partial--settings__notifications">
+      <h5>Notifications</h5>
+
+      <div class="input-container ios-like cf" ng-repeat="option in notificationOptions">
+        <input type="checkbox">
+        <input type="checkbox" checked id="{{option.label}}" name="{{option.label}}">
+        <label for="{{option.label}}"></label>
+        <span>
+          <strong>{{option.label}}</strong>
+        </span>
+      </div>
+
+    </div>
+
+    <div class="partial--settings__privacy">
+      <h5>Privacy</h5>
+
+      <div class="input-container cf">
+        <label class="control radio" ng-repeat="option in privacyOptions">
+          <input type="checkbox" id="option.label" name="option.label">
+          <span class="control-indicator"></span>
+          {{option.label}}
+        </label>
+      </div>
+
+    </div>
+
+    <button class="button cta">Save Changes</button>
+
+  </div>
+
+</section>

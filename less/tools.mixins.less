@@ -32,19 +32,23 @@
 		background-color: @color;
 	}
 }
-// // -----------------------------------------------------------------------------
-// // we can control whether or not we have inset shadows edges.
-// // $active - Default: true, Options: false
-// // -----------------------------------------------------------------------------
-// @mixin inset-shadow($active: true) {
-//   box-shadow: $box-shadow-size $box-shadow-shiny-color inset;
-
-//   @if $active { &:active {
-//     box-shadow: $box-shadow-size $box-shadow-shiny-color-active inset; } }
-// }
 
 // -----------------------------------------------------------------------------
-// We use this to add transitions to elements
+// flip that image horizontally
+// -----------------------------------------------------------------------------
+
+
+.flip() {
+  -moz-transform: scaleY(-1);
+  -o-transform: scaleY(-1);
+  -webkit-transform: scaleY(-1);
+  transform: scaleY(-1);
+  filter: FlipV;
+  -ms-filter: "FlipV";
+}
+
+// -----------------------------------------------------------------------------
+// I use this to add transitions to elements
 // $property - Default: all,
 // Options: http://www.w3.org/TR/css3-transitions/#animatable-properties
 // $speed - Default: 218ms
@@ -55,117 +59,11 @@
   transition: @property @speed @ease;
 }
 
-// // -----------------------------------------------------------------------------
-// // we use this to create isosceles triangles
-// // $triangle-size - Used to set border-size. No default, set a px or em size.
-// // $triangle-color - Used to set border-color which makes up triangle. No default
-// // $triangle-direction - Used to determine which direction triangle points. Options: top, bottom, left, right
-// // -----------------------------------------------------------------------------
-// @mixin css-triangle($triangle-size, $triangle-color, $triangle-direction) {
-//   content: "";
-//   display: block;
-//   width: 0;
-//   height: 0;
-//   border: inset $triangle-size;
-//   @if ($triangle-direction == top) {
-//     border-color: $triangle-color transparent transparent transparent;
-//     border-top-style: solid;
-//   }
-//   @if ($triangle-direction == bottom) {
-//     border-color: transparent transparent $triangle-color transparent;
-//     border-bottom-style: solid;
-//   }
-//   @if ($triangle-direction == left) {
-//     border-color: transparent transparent transparent $triangle-color;
-//     border-left-style: solid;
-//   }
-//   @if ($triangle-direction == right) {
-//     border-color: transparent $triangle-color transparent transparent;
-//     border-right-style: solid;
-//   }
-// }
-
-// // -----------------------------------------------------------------------------
-// // we use this to translate elements in 2D
-// // $horizontal: Default: 0
-// // $vertical: Default: 0
-// // -----------------------------------------------------------------------------
-// @mixin translate2d($horizontal: 0, $vertical: 0) {
-//   transform: translate($horizontal,$vertical)
-// }
-
-// // -----------------------------------------------------------------------------
-// // makes an element visually hidden, but accessible.
-// // @see http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
-// // -----------------------------------------------------------------------------
-// @mixin element-invisible {
-//   position: absolute !important;
-//   height: 1px;
-//   width: 1px;
-//   overflow: hidden;
-//   clip: rect(1px, 1px, 1px, 1px);
-// }
-
-// // -----------------------------------------------------------------------------
-// // turns off the element-invisible effect.
-// // -----------------------------------------------------------------------------
-// @mixin element-invisible-off {
-//   position: static !important;
-//   height: auto;
-//   width: auto;
-//   overflow: visible;
-//   clip: auto;
-// }
-
-// // -----------------------------------------------------------------------------
-// // we use it to make a stylish effect of text overflow with ellipsis
-// // -----------------------------------------------------------------------------
-// @mixin text-truncate {
-//   overflow: hidden;
-//   text-overflow: ellipsis;
-//   white-space: nowrap;
-//   // FF bug fix
-//   vertical-align: top;
-//   display: inline-block;
-// }
-
-// // -----------------------------------------------------------------------------
-// // we use it to set the opacity for the broswer and
-// // provide a filter fallback for IE8
-// // -----------------------------------------------------------------------------
-// @mixin opacity($opacity) {
-//   opacity: $opacity;
-//   $opacity-ie: $opacity * 100;
-//   filter: alpha(opacity=$opacity-ie); //IE8
-// }
-
-// // -----------------------------------------------------------------------------
-// // we use it to make horizontal navigation lists
-// // -----------------------------------------------------------------------------
-// @mixin navigation-list {
-//   list-style-type: none;
-//   padding: 0;
-//   margin: 0;
-//   overflow: hidden;
-//   > li{
-//     display: inline-block;
-//     &:last-child{
-//       margin-right: 0;
-//     }
-//   }
-// }
-
-// // -----------------------------------------------------------------------------
-// // we use it to define the retina display media query
-// // -----------------------------------------------------------------------------
-// @mixin retina($image, $width, $height) {
-//   @media (min--moz-device-pixel-ratio: 1.3),
-//          (-o-min-device-pixel-ratio: 2.6/2),
-//          (-webkit-min-device-pixel-ratio: 1.3),
-//          (min-device-pixel-ratio: 1.3),
-//          (min-resolution: 1.3dppx) {
-//     // on retina, use image that's scaled by 2 in small elements and 1.5 for big
-//     background-image: url($image);
-//     background-size: $width $height;
-//   }
-// }
+.column-layout(@col, @gap) {
+    -moz-column-count: @col;
+    -moz-column-gap: @gap;
+    -webkit-column-count: @col;
+    -webkit-column-gap: @gap;
+    column-count: @col;
+    column-gap: @gap;
+}
